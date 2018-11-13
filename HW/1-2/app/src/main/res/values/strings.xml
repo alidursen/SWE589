@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">HW1-2</string>
+    <string name="startrek">StarTrek</string>
+    <string name="image_visible">Image Visible</string>
+    <string name="tint">Orange tint over image</string>
+    <string name="tint_mode_screen_or_multiply">Tint mode (Screen or Multiply)</string>
+</resources>
