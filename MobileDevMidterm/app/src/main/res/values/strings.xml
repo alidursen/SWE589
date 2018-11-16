@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AKA</string>
+    <string name="action_settings">Open Form Variant</string>
+    <string name="enter_the_acronym_eg_hmm">Enter the Acronym(eg. HMM)</string>
+</resources>

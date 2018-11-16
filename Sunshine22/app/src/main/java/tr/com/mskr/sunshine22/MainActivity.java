@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity
 *           For documentation, see:     https://developer.android.com/reference/android/os/AsyncTask
 *     * FetchWeatherTask.java; l:92     (Be mindful of .length vs .length() )
 *     * GreenAdapter.java;     l:70     (After data update, call notifyDataSetChanged() )
-*     * DetailActivity.java;   l:50     (AsyncTask's come with their exceptions. How to handle?)
+*     * DetailActivity.java;   l:51     (AsyncTask's come with their exceptions. How to handle?)
 *     * FetchWeatherIcon.java; l:12     (Solution to draw from URL found at StackOverflow)        */
 
 
@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        mNumbersList                      = (RecyclerView) findViewById(R.id.rv_forecast);
+        mNumbersList                      = findViewById(R.id.rv_forecast);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
 
         mNumbersList.setLayoutManager(layoutManager);

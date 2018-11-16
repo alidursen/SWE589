@@ -48,7 +48,8 @@ public class DetailActivity extends AppCompatActivity {
                 try {
                     mIcon.setImageBitmap((new FetchWeatherIcon())
                             .execute(iconLoc).get(2, TimeUnit.SECONDS));
-                } catch (InterruptedException | TimeoutException | ExecutionException e) {
+                }   //What are these exceptions?
+                catch (InterruptedException | TimeoutException | ExecutionException e) {
                     e.printStackTrace();
                 }
             }
