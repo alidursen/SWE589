@@ -4,15 +4,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
 
 import com.example.android.welyre.R;
+import com.example.geyik.termproject.Adapters.AdapterAlbum;
+import com.example.geyik.termproject.Adapters.AdapterArtist;
+import com.example.geyik.termproject.Adapters.AdapterProj;
+import com.example.geyik.termproject.Adapters.AdapterSong;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 
-public class SearchBehaviour extends AppCompatActivity {
+public class ActivitySearchResults extends AppCompatActivity {
 
 
 
@@ -27,6 +30,8 @@ public class SearchBehaviour extends AppCompatActivity {
         setContentView(R.layout.search_result);
 
         searchResult = findViewById(R.id.searchResult);
+        searchResult.setLayoutManager(new LinearLayoutManager(this));
+        searchResult.setHasFixedSize(true);
 
         updateAdapter(starter.getStringArrayExtra(Intent.EXTRA_TEXT)[0],
                 starter.getStringArrayExtra(Intent.EXTRA_TEXT)[1]);
@@ -36,13 +41,13 @@ public class SearchBehaviour extends AppCompatActivity {
         try {
             switch (adapterName){
                 case "artist":
-                    adapter = new AdapterArtist(query, SearchBehaviour.this);
+                    adapter = new AdapterArtist(query, ActivitySearchResults.this);
                     break;
                 case "album":
-                    adapter = new AdapterAlbum(query, SearchBehaviour.this);
+                    adapter = new AdapterAlbum(query, ActivitySearchResults.this);
                     break;
                 case "song":
-                    adapter = new AdapterSong(query, SearchBehaviour.this);
+                    adapter = new AdapterSong(query, ActivitySearchResults.this);
                     break;
             }
         } catch (JSONException e) { e.printStackTrace(); }

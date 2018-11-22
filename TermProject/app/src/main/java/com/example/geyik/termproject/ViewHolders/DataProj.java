@@ -1,18 +1,18 @@
-package com.example.geyik.termproject;
+package com.example.geyik.termproject.ViewHolders;
 
 import android.support.annotation.NonNull;
-import android.support.v7.view.menu.MenuView;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import org.json.JSONArray;
+import com.example.geyik.termproject.ActivitySearchResults;
+
 import org.json.JSONObject;
 
 public abstract class DataProj extends RecyclerView.ViewHolder {
-    protected SearchBehaviour parent;
+    protected ActivitySearchResults parent;
     protected String nextType;
 
-    public DataProj(@NonNull View itemView, final SearchBehaviour rV) {
+    public DataProj(@NonNull View itemView, final ActivitySearchResults rV) {
         super(itemView);
         parent = rV;
 

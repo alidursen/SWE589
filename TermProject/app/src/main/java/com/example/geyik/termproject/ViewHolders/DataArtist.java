@@ -1,19 +1,18 @@
-package com.example.geyik.termproject;
+package com.example.geyik.termproject.ViewHolders;
 
 import android.support.annotation.NonNull;
 import android.view.View;
 import android.widget.TextView;
 
 import com.example.android.welyre.R;
+import com.example.geyik.termproject.ActivitySearchResults;
 
-import org.json.JSONArray;
 import org.json.JSONObject;
-import org.w3c.dom.Text;
 
 public class DataArtist extends DataProj {
     TextView placeholder;
 
-    public DataArtist(@NonNull View itemView, SearchBehaviour rV) {
+    public DataArtist(@NonNull View itemView, ActivitySearchResults rV) {
         super(itemView, rV);
 
         nextType = "album";

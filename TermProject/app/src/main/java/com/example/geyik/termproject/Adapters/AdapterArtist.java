@@ -1,4 +1,4 @@
-package com.example.geyik.termproject;
+package com.example.geyik.termproject.Adapters;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.android.welyre.R;
+import com.example.geyik.termproject.ViewHolders.DataArtist;
+import com.example.geyik.termproject.ActivitySearchResults;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -16,7 +18,7 @@ public class AdapterArtist extends AdapterProj {
             "Justin Bieber", "Chris Brown", "Mariha Carey",
             "Drake", "Katy Perry", "Selena Gomez", "Taylor Swift"};
 
-    public AdapterArtist(String query, SearchBehaviour parent) throws JSONException {
+    public AdapterArtist(String query, ActivitySearchResults parent) throws JSONException {
         super(query, parent);
         //super.dataArray = get data from API(query);
 
@@ -27,7 +29,7 @@ public class AdapterArtist extends AdapterProj {
     @Override
     public DataArtist onCreateViewHolder(ViewGroup parent, int viewType) {
         Context context = parent.getContext();
-        int layoutIdForListItem = R.layout.recycler_artist;
+        int layoutIdForListItem = R.layout.vh_artist;
         LayoutInflater inflater = LayoutInflater.from(context);
         boolean shouldAttachToParentImmediately = true;
 

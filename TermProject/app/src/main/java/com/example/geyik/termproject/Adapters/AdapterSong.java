@@ -1,4 +1,4 @@
-package com.example.geyik.termproject;
+package com.example.geyik.termproject.Adapters;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.android.welyre.R;
+import com.example.geyik.termproject.ViewHolders.DataSong;
+import com.example.geyik.termproject.ActivitySearchResults;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -17,7 +19,7 @@ public class AdapterSong extends AdapterProj {
             "Willing to Wait", "Music of the Sun", "Let Me", "Rush",
             "There's a Thug in My Life", "Now I Know", "Pon de Replay (Remix)"};
 
-    public AdapterSong(String query, SearchBehaviour parent) throws JSONException {
+    public AdapterSong(String query, ActivitySearchResults parent) throws JSONException {
         super(query, parent);
         //super.dataArray = get data from API(query);
 
@@ -28,7 +30,7 @@ public class AdapterSong extends AdapterProj {
     @Override
     public DataSong onCreateViewHolder(ViewGroup parent, int viewType) {
         Context context = parent.getContext();
-        int layoutIdForListItem = R.layout.recycler_song;
+        int layoutIdForListItem = R.layout.vh_song;
         LayoutInflater inflater = LayoutInflater.from(context);
         boolean shouldAttachToParentImmediately = true;
 

@@ -38,11 +38,11 @@
                 android:resource="@xml/searchable"/>
         </activity>
 
-        <activity android:name="com.example.geyik.termproject.LyricDisplay"
+        <activity android:name="com.example.geyik.termproject.ActivityLyricDisplay"
             android:theme="@style/AppTheme">
         </activity>
 
-        <activity android:name="com.example.geyik.termproject.SearchBehaviour"></activity>
+        <activity android:name="com.example.geyik.termproject.ActivitySearchResults"></activity>
 
 
     </application>

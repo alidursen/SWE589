@@ -10,7 +10,7 @@ import com.example.android.welyre.R;
 
 import org.w3c.dom.Text;
 
-public class LyricDisplay extends AppCompatActivity {
+public class ActivityLyricDisplay extends AppCompatActivity {
     private TextView lyricView;
 
     String lyrics = "Woo! Di club is getting warmer\n" +
