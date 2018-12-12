@@ -21,7 +21,8 @@ Sometimes not a problem, more often than not frustrating.
 * Android documentation... leaves much to be desired. Though -as expected- all functions are there to be found, point of their
 existence eludes the reader. Python documentation, which is voluntarily created, is much better to name one.
 
-### Course Content
+### Course Content
+
 We have seen a number of interesting concepts. Lecture notes will not be kept on the repo due to intellectual property issues
 but they deal with
 * Activities: what you see on your device screen is an activity. When you tap a button and it _goes_ to another screen, that's
@@ -41,5 +42,14 @@ on how space rockets had about the same processing power as our phones do make s
 multithreaded operations. Android doesn't want you to connect to internet on the user view, or even do anything time consuming.
 Instead you create and destroy background thread operations as needed. Therefore, they suggest, do your JSON parsing and database
 access and whatnot in the background.
-* 
-
+* Then came a quick look at menu management and how preferences are preserved. Note that, actually, menus are activities on their own
+right, therefore global (ie. app scale) of perseverance is vital. Truth be told, this part is a bit hazy, need to revisit if I am
+to do any serious Android development in the future.
+* Another week on Android's UX principles, and how they strive to reach a unified sense of _Android'ness_ . Very interesting stuff,
+though more directed towards UI/UX designers than software designers. Still, a quick look at [Material Design](https://material.io/)
+is recommended for everyone involved in Android development.
+* Finally -currently- we're dealing with data management. Again, there is sort of a trade off going on: Do you want your data stored
+elsewhere, to be reached via internet, or do you want them locally stored eating up resources? Circumstances dictate storage is easier
+to come by than internet access, thus mobile apps do offer database management tools. There is one device-wide _Content Provider_ that
+manages app-wide databases. In other words, you develop **both** your app and its database, but their connection happens via this
+_Content Provider_ . There's also talk of URI's and so forth, but this is as expected.
