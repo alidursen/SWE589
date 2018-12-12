@@ -1,5 +1,10 @@
 package tr.com.mskr.sunshine22;
 
+import android.content.ContentResolver;
+import android.content.ContentUris;
+import android.content.ContentValues;
+import android.content.Context;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.util.Log;
 
@@ -29,9 +34,17 @@ public class FetchWeatherTask extends AsyncTask<String, Void, JSONArray> {
 // QUESTION: What are parameters on AsyncTask<X, Y, Z> ?
 
     private GreenAdapter mWeatherAdapter;
+    Context mContext;
+    ContentResolver mResolver;
 
     public FetchWeatherTask(GreenAdapter weatherAdapter) {
         mWeatherAdapter = weatherAdapter;
+    }
+
+    public FetchWeatherTask(GreenAdapter mWeatherAdapter, Context context){
+        this.mWeatherAdapter=mWeatherAdapter;
+        mContext = context;
+        mResolver = mContext.getContentResolver();
     }
 
     @Override
@@ -100,6 +113,22 @@ public class FetchWeatherTask extends AsyncTask<String, Void, JSONArray> {
             }
         }
         mWeatherAdapter.setWeatherData(weatherInfo);
+    }
+
+    public long addLocation(String locationSetting, String cityName, double lat, double lon){
+        long locationId;
+        Uri insertedUri;
+
+        ContentValues locationValues = new ContentValues();
+
+        locationValues.put(LocationEntry.COLUMN_CITY_NAME), cityName;
+        locationValues.put(LocationEntry.COLUMN_LOCATION_SETTING, locationSetting);
+        locationValues.put(LocationEntry.COLUMN_COORD_LAT, lat);
+        locationValues.put(LocationEntry.COLUMN_COORD_LONG, lon);
+
+        insertedUri = mResolver.insert(LocationEntry.CONTENT_URI, locationValues);
+
+        return ContentUris.parseId(insertedUri);
     }
 
 }
